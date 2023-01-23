@@ -3,8 +3,8 @@ import time
 
 # See README.md for more info about these constants.
 
-RECYCLE_POS = "190, 1081"
-HOLD_RECYCLE_POS = "513, 1756"
+RECYCLE_POS = "190 1081"
+HOLD_RECYCLE_POS = "513 1756"
 
 
 def connect():
@@ -27,12 +27,12 @@ def start_recycle(recycle_num=1):
     device, client = connect()
 
     for i in range(recycle_num):
-        device.shell("input tap 190 1081")  # recycle button
+        device.shell(f"input tap {RECYCLE_POS}")  # recycle button
         time.sleep(2)  # wait for recycle screen to load
-        device.shell("input touchscreen swipe 513 1756 513 1756 5000")  # hold down recycle button
+        device.shell(f"input touchscreen swipe {HOLD_RECYCLE_POS} {HOLD_RECYCLE_POS} 5000")  # hold down recycle button
         time.sleep(3)  # wait to get back to recycle screen
 
 
 if __name__ == '__main__':
-    num_to_recycle = input("Items to recycle: ")
+    num_to_recycle = input("Amount of furnitures to recycle: ")
     start_recycle(int(num_to_recycle))
