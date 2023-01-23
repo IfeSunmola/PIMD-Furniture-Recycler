@@ -42,6 +42,8 @@ recycling. It is the button you have to hold down.
 
 Repeat the steps above to find the coordinates of it.
 
-That's all.
-
 ----
+
+## NOTE:
+
+1. You should be on the screen shown in image 1 when you run the program
